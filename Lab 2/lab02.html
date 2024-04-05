@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab #2</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }
+
+        .flex-box {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 50%;
+            background-color: #e5e5e5;
+            border: 1px solid black;
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .container>h2 {
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-box">
+        <div class="container">
+            <h2>
+                ¿Qué es Javascript y en que se asemeja a Java?
+            </h2>
+
+            <p>
+                JavaScript es un lenguaje de programación interpretado utilizado principalmente para el desarrollo web,
+                permitiendo agregar interactividad a las páginas. Java, por otro lado, es un lenguaje de programación
+                orientado a objetos compilado que se ejecuta en una máquina virtual Java, conocido por su portabilidad.
+                Aunque comparten un nombre similar, son distintos en términos de sintaxis, paradigmas de programación y
+                uso.
+                JavaScript se enfoca en la interactividad web, mientras que Java es utilizado en una amplia gama de
+                aplicaciones, desde desarrollo de escritorio hasta aplicaciones empresariales y móviles.
+            </p>
+        </div>
+    </div>
+    <script>
+        punto2()
+        punto3()
+        punto4()
+        punto5()
+        isMultiple(50)
+
+        function punto2() {
+            var num1 = 20;
+            var num2 = 10;
+
+            var res1 = num1 + num2;
+            var res2 = num1 - num2;
+            var res3 = num1 * num2;
+            var res4 = num1 / num2;
+
+            var resultado = {
+                "Suma": res1,
+                "Resta": res2,
+                "Multiplicación": res3,
+                "División": res4,
+            }
+
+            console.log(resultado)
+        }
+        function punto3() {
+            let name = 'Carlos'
+            let lastName = 'Solís'
+
+            console.log(name + ' ' + lastName)
+        }
+
+        function punto4() {
+            const aStrangeVariable = true
+            console.log('La variable es de tipo: ' + typeof (aStrangeVariable))
+        }
+
+        function punto5() {
+            let data = {
+                num: 42,
+                aStrig: "Hola",
+                bool: true,
+                emptyObj: {}
+            };
+
+            console.log('El objeto es: ', data)
+        }
+
+        function isMultiple(num) {
+            if (Number.isInteger(num)) {
+                let count = 0
+                for (let i = 1; i < num; i++) {
+                    if (i % 3 === 0 || i % 5 === 0) {
+                        count += i
+                    }
+                }
+
+                console.log('La suma de los multiplos de 3 y 5 menores a 50 son: ' + count)
+            } else {
+                console.log('El numero no es un entero')
+            }
+        }
+    </script>
+</body>
+
+</html>
