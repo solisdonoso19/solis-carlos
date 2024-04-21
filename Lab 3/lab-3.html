@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio #3</title>
+</head>
+
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #fefefe;
+    }
+
+    body {
+        background-color: #333333;
+        padding: 40px 72px;
+    }
+
+    input {
+        border: 2px solid black;
+        border-radius: 8px;
+        height: 30px;
+        width: 250px;
+        color: #333333;
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    button {
+        border: 0px;
+        height: 50px;
+        width: 200px;
+        background-color: #fefefe;
+        color: #333333;
+        font-size: 40px;
+        border-radius: 8px;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .card {
+        border: 1px solid #fefefe;
+        border-radius: 8px;
+        padding: 24px;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1>Laboratorio #3</h1>
+    <h2>Carlos Solís</h2>
+    <div style="margin-top: 100px;" class="flex">
+        <section class="flex card">
+            <div>
+                <h2>
+                    Número palíndromo
+                </h2>
+                <input type="number" id="palindromo" style="margin-top: 16px;">
+                <div style="text-align: center;margin-top: 16px;">
+                    <button onclick="esPalindromo()">Enviar</button>
+                </div>
+            </div>
+            <div>
+                <h2>Resultado:</h2>
+                <h4 id="rPalindromo"></h4>
+            </div>
+        </section>
+
+        <section class="flex card">
+            <div>
+                <h2>
+                    Suma de caracteress
+                </h2>
+                <input type="text" id="contador" style="margin-top: 16px;">
+                <div style="text-align: center;margin-top: 16px;">
+                    <button onclick="contador()">Enviar</button>
+                </div>
+            </div>
+            <div>
+                <h2>Resultado:</h2>
+                <h4 id="rContador"></h4>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin-top: 100px;" class="flex">
+        <section class="flex card">
+            <div>
+                <h2>
+                    Año Bisiesto
+                </h2>
+                <input type="number" id="bisiesto" style="margin-top: 16px;">
+                <div style="text-align: center;margin-top: 16px;">
+                    <button onclick="bisiesto()">Enviar</button>
+                </div>
+            </div>
+            <div>
+                <h2>Resultado:</h2>
+                <h4 id="rBisiesto"></h4>
+            </div>
+        </section>
+
+        <section class="flex card">
+            <div>
+                <h2>
+                    Suma de Números Primos
+                </h2>
+                <input type="number" id="primo" style="margin-top: 16px;">
+                <div style="text-align: center;margin-top: 16px;">
+                    <button onclick="primo()">Enviar</button>
+                </div>
+            </div>
+            <div>
+                <h2>Resultado:</h2>
+                <h4 id="rPrimo"></h4>
+            </div>
+        </section>
+    </div>
+</body>
+<script>
+    const esPalindromo = () => {
+        const rPalindromo = document.getElementById('rPalindromo')
+        const number = document.getElementById('palindromo').value
+        const base = whatBase(number)
+        const palindromo = isPalindromo(number)
+        let result = makeStringPalindromo(base, palindromo)
+        rPalindromo.textContent = result
+    }
+
+    const whatBase = (n) => {
+        const cadena = [...n]
+        let base10 = false
+        cadena.forEach(i => {
+            if (i !== '0' && i !== '1') {
+                base10 = true
+                return;
+            }
+        })
+        return base10;
+    }
+
+    const isPalindromo = (n) => {
+        let longitud = n.length;
+        for (let i = 0; i < longitud / 2; i++) {
+            if (n[i] !== n[longitud - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    const makeStringPalindromo = (b, p) => {
+        let result = ''
+        if (b) {
+            result = 'Base 10'
+        } else {
+            result = 'Base 2'
+        }
+
+        if (p) {
+            result = `${result} Es Palíndromo`
+        } else {
+            result = `${result} no es Palíndromo`
+        }
+
+        return result
+    }
+</script>
+
+<script>
+    const contador = () => {
+        const rContador = document.getElementById('rContador')
+        const cadenar = document.getElementById('contador').value
+        const conteo = contarCaracteres(cadenar)
+        const result = makeStringContador(conteo)
+        rContador.textContent = result
+    }
+
+    const contarCaracteres = (cadena) => {
+        let conteo = {};
+        for (let i = 0; i < cadena.length; i++) {
+            let caracter = cadena[i];
+
+            if (conteo[caracter] !== undefined) {
+                conteo[caracter]++;
+            } else {
+                conteo[caracter] = 1;
+            }
+        }
+
+        return conteo;
+    }
+
+    const makeStringContador = (c) => {
+        const stringConvert = JSON.stringify(c)
+        return stringConvert.replace(/[{}"]/g, "").replace(/:/g, ": ");
+    }
+</script>
+
+<script>
+    const bisiesto = () => {
+        const rBisiesto = document.getElementById('rBisiesto')
+        const year = document.getElementById('bisiesto').value
+        const bisiesto = esBisiesto(year)
+        const result = makeStringBisiesto(bisiesto)
+        rBisiesto.textContent = result
+    }
+
+    const esBisiesto = (year) => {
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    const makeStringBisiesto = (r) => {
+        return r ? 'Es Bisiesto' : 'No es Bisiesto'
+    }
+</script>
+
+<script>
+    const primo = () => {
+        const rPrimo = document.getElementById('rPrimo')
+        const numero = document.getElementById('primo').value
+        const result = sumatoriaPrimos(numero)
+        rPrimo.textContent = result
+    }
+
+    const esPrimo = (numero) => {
+        if (numero <= 1) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i === 0) {
+                return false;
+            }
+            return true;
+        }
+    }
+
+    const sumatoriaPrimos = (n) => {
+        let suma = 0;
+        for (let i = 2; i <= n; i++) {
+            if (esPrimo(i)) {
+                suma += i;
+            }
+        }
+        return suma;
+    }
+</script>
+
+</html>
