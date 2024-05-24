@@ -33,7 +33,7 @@
         }
       },
       redirectToLogin() {
-        window.location.href = "/index.html";
+        window.location.href = "index.html";
       },
     },
     methods: {
@@ -57,8 +57,8 @@
       },
       addToLocalBD(i) {
         if (!App.methods.usernameExist(i.user, App.elements["BD"].BD)) {
-          id = App.elements["BD"].BD.length;
-          user = { ...i, id: id + 1 };
+          const id = App.elements["BD"].BD.length;
+          const user = { ...i, id: id + 1 };
           App.elements["BD"].BD.push(user);
           localStorage.setItem("BD", JSON.stringify(App.elements["BD"]));
           App.handlers.redirectToLogin();
@@ -77,7 +77,7 @@
       },
       validateSession() {
         if (sessionStorage.getItem("validToken")) {
-          window.location.href = "/home.html";
+          window.location.href = "home.html";
         }
       },
     },

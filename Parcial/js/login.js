@@ -38,7 +38,7 @@
         }
       },
       redirectToRegister() {
-        window.location.href = "/register.html";
+        window.location.href = "register.html";
       },
     },
     methods: {
@@ -73,14 +73,14 @@
         if (user.pass === userBD.pass) {
           sessionStorage.setItem("user", JSON.stringify(userBD));
           sessionStorage.setItem("validToken", true);
-          window.location.href = "/home.html";
+          window.location.href = "home.html";
         } else {
           alert("Contraseña Incorrecta");
         }
       },
       validateSession() {
         if (sessionStorage.getItem("validToken")) {
-          window.location.href = "/home.html";
+          window.location.href = "home.html";
         }
       },
     },

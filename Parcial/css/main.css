@@ -9,9 +9,10 @@ nav {
   display: flex;
   justify-content: space-between;
   color: #003468;
+  border-bottom: solid 1px #cccccc;
 }
 
-nav div:first-child {
+nav div {
   display: flex;
   align-items: center;
 }

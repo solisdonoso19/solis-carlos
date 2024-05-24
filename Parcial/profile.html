@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <nav>
+        <div>
+            <img width="48" src="https://egi.com.pa/wp-content/uploads/2017/11/bg.png" alt="logo">
+            <h2>TusMalosVecinos</h2>
+        </div>
+        <div id="profile">
+            <span id="nav-user-name" style="margin-right: 16px;"></span>
+            <img width="24" src="https://static-00.iconduck.com/assets.00/profile-circle-icon-256x256-ewso45t8.png"
+                alt="profile icon">
+        </div>
+    </nav>
+    <section>
+        <div>
+            <h2>
+                Información de perfil
+            </h2>
+            <h4 id="allowEdit">Actualizar Mi Información</h4>
+        </div>
+        <form>
+            <div class="field">
+                <label for="name">Nombre</label>
+                <input id="name" type="text" required disabled>
+            </div>
+            <div class="field">
+                <label for="user">Username</label>
+                <input id="user" type="text" required disabled>
+            </div>
+            <div id="confirm-pass" style="display: none;" class="field">
+                <label for="pass">Introduzca su constraseña actual</label>
+                <input id="confirmPass" type="password" required>
+            </div>
+            <div class="field">
+                <label for="pass">Constraseña</label>
+                <input id="pass" type="password" required disabled>
+            </div>
+            <button id="send" style="visibility: hidden;" type="submit">Actualizar</button>
+        </form>
+    </section>
+    <script src="js/profile.js"></script>
+</body>
+
+</html>

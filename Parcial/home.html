@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Home
+    </title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <nav>
+        <div>
+            <img width="48" src="https://egi.com.pa/wp-content/uploads/2017/11/bg.png" alt="logo">
+            <h2>TusMalosVecinos</h2>
+        </div>
+        <div id="profile">
+            <span id="nav-user-name"></span>
+            <img width="24" src="https://static-00.iconduck.com/assets.00/profile-circle-icon-256x256-ewso45t8.png"
+                alt="profile icon">
+        </div>
+    </nav>
+    <section>
+        <h2>Ingresar datos</h2>
+        <form>
+            <label for="type">Tipo de registro: </label>
+            <select name="type" id="type">
+                <option value="" selected></option>
+                <option value="entrada">Entrada</option>
+                <option value="gasto">Gasto</option>
+            </select>
+            <label for="description">Descripción</label>
+            <input type="text" name="description" id="description">
+            <label for="qty">Cantidad</label>
+            <input id="qty" name="qty" type="number">
+            <button id="send">Guardar</button>
+        </form>
+    </section>
+    <section>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+            </thead>
+            <tbody id="table-body">
+
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <div style="width: 100%;" id="graph"></div>
+    </section>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
