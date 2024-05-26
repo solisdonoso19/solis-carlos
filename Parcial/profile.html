@@ -12,43 +12,53 @@
 
 <body>
     <nav>
-        <div>
+        <div id="return-home">
             <img width="48" src="https://egi.com.pa/wp-content/uploads/2017/11/bg.png" alt="logo">
             <h2>TusMalosVecinos</h2>
         </div>
-        <div id="profile">
-            <span id="nav-user-name" style="margin-right: 16px;"></span>
-            <img width="24" src="https://static-00.iconduck.com/assets.00/profile-circle-icon-256x256-ewso45t8.png"
-                alt="profile icon">
+        <div>
+            <div id="profile" class="nav-btn">
+                <span id="nav-user-name"></span>
+                <i class="bi bi-person"></i>
+            </div>
+            <div id="log-out" style="margin-left: 16px;" class="nav-btn">
+                <i class="bi bi-box-arrow-right"></i>
+            </div>
         </div>
     </nav>
-    <section>
-        <div>
-            <h2>
-                Información de perfil
-            </h2>
-            <h4 id="allowEdit">Actualizar Mi Información</h4>
-        </div>
-        <form>
-            <div class="field">
-                <label for="name">Nombre</label>
-                <input id="name" type="text" required disabled>
+    <div class="container">
+        <section>
+            <div style="width: 60%;">
+                <i class="bi bi-person-circle"></i>
+                <div>
+                    <h2 style="margin-bottom: 24px;">
+                        Información de perfil
+                    </h2>
+                </div>
+                <form>
+                    <div class="field">
+                        <label for="name">Nombre</label>
+                        <input id="name" type="text" required disabled>
+                    </div>
+                    <div class="field">
+                        <label for="user">Username</label>
+                        <input id="user" type="text" required disabled>
+                    </div>
+                    <div id="confirm-pass" style="display: none;" class="field">
+                        <label for="pass">Introduzca su constraseña actual</label>
+                        <input id="confirmPass" type="password" required>
+                    </div>
+                    <div class="field">
+                        <label id="pass-label" for="pass">Constraseña</label>
+                        <input id="pass" type="password" placeholder="●●●●●●●●" required disabled>
+                    </div>
+                    <button id="send" style="visibility: hidden;" type="submit">Actualizar</button>
+                    <p id="cancelEdit" style="visibility: hidden;">Cancelar</p>
+                </form>
+                <button id="allowEdit">Actualizar Mi Información</button>
             </div>
-            <div class="field">
-                <label for="user">Username</label>
-                <input id="user" type="text" required disabled>
-            </div>
-            <div id="confirm-pass" style="display: none;" class="field">
-                <label for="pass">Introduzca su constraseña actual</label>
-                <input id="confirmPass" type="password" required>
-            </div>
-            <div class="field">
-                <label for="pass">Constraseña</label>
-                <input id="pass" type="password" required disabled>
-            </div>
-            <button id="send" style="visibility: hidden;" type="submit">Actualizar</button>
-        </form>
-    </section>
+        </section>
+    </div>
     <script src="js/profile.js"></script>
 </body>
 

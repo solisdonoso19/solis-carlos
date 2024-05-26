@@ -1,0 +1,108 @@
+.graph {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.graph-container {
+  width: 100%;
+  border-left: solid 2px;
+  border-bottom: solid 2px;
+  border-bottom-left-radius: 8px;
+}
+
+.graph-container > div {
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#graph-entrada {
+  height: 100px;
+  background-color: rgb(149, 228, 38);
+  transition: all ease 1s;
+}
+#graph-gasto {
+  height: 100px;
+  background-color: maroon;
+  transition: all ease 1s;
+}
+
+.metrics {
+  display: flex;
+  align-items: start;
+  width: 100%;
+}
+
+.metrics > div {
+  width: 100%;
+  text-align: right;
+  border-right: solid 1px;
+}
+
+.sections {
+  border-radius: 16px;
+  background-color: #ffffff;
+  padding: 24px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sections:not(:last-child) {
+  height: 100%;
+}
+.container {
+  grid-template-areas:
+    "form table"
+    "graph graph";
+}
+
+table {
+  border-spacing: 0;
+}
+table > thead {
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+th {
+  padding: 16px;
+  text-align: left;
+}
+
+table th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+table th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+td {
+  padding: 16px;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.table-container table {
+  width: 100%;
+}
+
+.table-container thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-areas:
+      "form"
+      "table"
+      "graph";
+  }
+}

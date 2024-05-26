@@ -11,20 +11,36 @@
 </head>
 
 <body>
-    <section style="width: 100%;height:100vh;display:flex;justify-content: center;align-items: center">
-        <div>
-            <form style="display: flex;flex-direction:column;width:250px">
-                <label for="user">Username</label>
-                <input id="user" type="text">
-                <label for="pass">Constraseña</label>
-                <input id="pass" type="password">
-                <button id="send" type="submit">Login</button>
-            </form>
-            <h2>
-                No te has registrado? Registrate <span id="re-register">aqui!</span>
-            </h2>
-        </div>
-    </section>
+    <div class="log-reg">
+        <section class="form-container">
+            <div style="width: 70%;">
+                <div style="display:flex;align-items:center;justify-content:center;flex-direction:column">
+                    <img width="48" src="https://egi.com.pa/wp-content/uploads/2017/11/bg.png" alt="logo">
+                    <h1>TusMalosVecinos</h1>
+                    <h4 style="margin: 48px 0 16px 0;text-align:center">Inicia Sesión para Ingresar a tu Cuenta</h4>
+                </div>
+                <form style="display: flex;flex-direction:column;width:100%">
+                    <div>
+                        <label for="user">Username</label>
+                        <input id="user" type="text">
+                    </div>
+                    <div>
+                        <label for="pass">Constraseña</label>
+                        <input id="pass" type="password">
+                    </div>
+                    <button id="send" type="submit">Login</button>
+                </form>
+                <p style="margin-top: 16px;text-align:center">
+                    No te has registrado? Registrate <span style="text-decoration: underline;cursor:pointer"
+                        id="re-register">aqui!</span>
+                </p>
+            </div>
+        </section>
+        <section class="img">
+            <img src="https://images.unsplash.com/photo-1607269910784-aafe40882991?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </section>
+    </div>
     <script src="js/login.js"></script>
 </body>
 

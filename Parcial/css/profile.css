@@ -3,3 +3,30 @@
   justify-content: space-between;
   align-items: center;
 }
+
+section {
+  border-radius: 16px;
+  background-color: #ffffff;
+  padding: 24px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.bi-person-circle {
+  font-size: 100px;
+}
+
+#cancelEdit {
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 16px;
+}
+
+@media (max-width: 800px) {
+  section > div {
+    width: 100% !important;
+  }
+}
