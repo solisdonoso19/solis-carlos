@@ -8,6 +8,8 @@
       logout: document.getElementById("log-out"),
       profile: document.getElementById("profile"),
       entrada: document.getElementById("graph-entrada"),
+      entradaPer: document.getElementById("entradas-per"),
+      gastoPer: document.getElementById("gastos-per"),
       gasto: document.getElementById("graph-gasto"),
       form: document.getElementById("send"),
       table: document.getElementById("table-body"),
@@ -94,6 +96,12 @@
         }, 0);
         const percentageEntrada = (totalEntrada / total) * 100;
         const percentageGasto = (totalGasto / total) * 100;
+        App.elements["entradaPer"].textContent = `${percentageEntrada.toFixed(
+          2
+        )}% - Total en dolares: B./${totalEntrada}`;
+        App.elements["gastoPer"].textContent = `${percentageGasto.toFixed(
+          2
+        )}% - Total en dolares: B./${totalGasto}`;
         App.elements["entrada"].style.width =
           !isNaN(percentageEntrada) && percentageEntrada !== undefined
             ? `${percentageEntrada}%`
